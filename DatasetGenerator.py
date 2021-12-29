@@ -1,6 +1,7 @@
 import math
 import re
 from Helper.common import *
+from random import shuffle
 
 class DatasetGenerator:
     # Remove the project containing fewer than 6 method invocations
@@ -21,6 +22,7 @@ class DatasetGenerator:
 
     def SplitDatat(self):
         files = getFileList(self.data, ".csv")
+        shuffle(files)
         all_files = []
         for file in files:
             filename = os.path.split(file)[-1][:-4]
